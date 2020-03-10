@@ -1,0 +1,63 @@
+/* #equipo{
+    border: purple solid 5px;
+}
+
+#equipo > *:first-child{
+    border: magenta solid 2px;
+} */
+
+#equipo .myCard-row{
+    border: mediumspringgreen solid 2px; /* Para debuggear, lo puedes quitar */
+    display: flex;
+}
+    #equipo .myCard-col{
+        border: white solid 2px; /* Para debuggear, lo puedes quitar */
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        #equipo .myCard-container{
+            /* background-color: teal; */
+            background-color: var(--myCard-container-bgColor);
+            border-radius: 25px;
+            max-width: 150px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+            #equipo .myCard-header{
+                /* background-color: tomato;    */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 15px;
+                padding-bottom: 5px;
+            }
+
+                #equipo img{
+                    border-radius: 50px;
+                }
+            
+            #equipo .myCard-body{
+                /* color: white; */
+                color: var(--myCard-body-color);
+                text-overflow: clip;
+                text-align: center;
+                line-height: 1.5rem;
+                font-weight: 500;
+                font-size: 16pt;
+            }
+
+            #equipo .myCard-footer{
+                /* color: white; */
+                color: var(--myCard-footer-color);
+                text-align: center;
+                font-weight: 300;
+                font-style: italic;
+                font-size: 12pt;
+                padding-top: 10px;
+            }

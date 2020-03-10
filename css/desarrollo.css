@@ -1,0 +1,10 @@
+#desarrollo .titulo1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#desarrollo > div:nth-child(2){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

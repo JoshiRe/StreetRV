@@ -1,0 +1,231 @@
+<!-- 
+    > El sitio como tal no te lleva a ninguna página. Mas bien, está dividida en secciones, las cuales se pueden ver
+    haciendo scroll o dando click en algún botón de la barra de navegación.
+    > La barra de navegación es sticky, se va a anclar al tope de la página cuando esta llegue a ese punto.
+    > El main css es el que aplica el estilo general a toda la página.
+    > A cada sección le dediqué su propio css, con tal de tener todo más ordenado.
+    > Las secciones son:
+        - Inicio: aquí va una imagen de fondo, acompañado de un título llamativo y un video corto.
+        - Nosotros: la descripcíon de quienes somos como empresa, acompañado del logo de esta.
+        - Desarrollo: aquí va el video de las entrevistas y el proceso de desarrollo.
+        - Equipo: aquí va un layout de 6 vistas. Cada vista contendrá una imagen de cada miembro del equipo, su nombre y puesto.
+        - Contacto: el formulario
+
+    > Cada sección sigue un patrón:
+        - Deben ir con la etiqueta "section"
+        - Deben contener un título h1 con la clase "titulo1"
+        Por lo tanto, si quieres agregar otra sección, sigue ese patrón.
+
+    > Si quieres agregar otro botón en el navbar, solo agrega otro div con su respectivo enlace y atributos.
+        Guíate de los botones que ya están agregados.
+    
+    BUGS Y OTRAS WEAS:
+    > Si das un segundo click a algún botón de la barra de navegación, no podrás seguir haciendo scroll. Tendrás
+        que presionar otro botón. Pensaba resolver esto con js.
+    > Cuando presionas un botón del navbar, este te lleva a sección deseada, pero parte de esa sección se queda oculta.
+        Pretendía buscar la forma de resolver eso mediante css o js. Si bien no es algo que afecte el funcionamiento de la página,
+        no se ve estético.
+    > Cuando presionas un botón del navbar, no se queda de color naranja para indicar que estás en esa sección. Pretendía resolver eso
+        con js y css.
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>StreetRV</title>
+        <meta charset="utf-8">
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="fontawesome/css/all.min.css">
+
+        <!-- Jquery -->
+        <script type="text/javascript" src="Jquery/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="Jquery/popper.min.js"></script> 
+        <!-- Librerías externas -->
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="Plugins/smooth-scroll.min.js"></script> <!-- Para que se haga un scroll fluido -->
+
+        <!-- Estilos propios -->
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/nosotros.css">
+        <link rel="stylesheet" href="css/desarrollo.css">
+        <link rel="stylesheet" href="css/equipo.css">
+
+        <!-- Scripts propios -->
+        <script type="text/javascript" src="js/myNavbar.js"></script>
+    </head>
+
+    <body id="body">
+        <header>
+            <!-- Aquí irá el título llamativo -->
+            <!-- Aquí irá el video de presentación -->
+        </header>
+        
+        <!-- NAVBAR -->
+        <!-- 
+            > Notarás que hay unos atributos extras, estos forman parte de la sintaxis de la librería "smooth-scroll"
+         -->
+        <div id="navbar" class="">
+            <div>
+                <a data-easing="easeInOutCubic" href="#body"><img src="img/150x40.png" alt=""></a>
+            </div>
+            <nav>
+                <div><a data-easing="easeInOutCubic" href="#body">Inicio</a></div>
+                <div><a data-easing="easeInOutCubic" href="#nosotros">Nosotros</a></div>
+                <div><a data-easing="easeInOutCubic" href="#desarrollo">Desarrollo</a></div>
+                <div><a data-easing="easeInOutCubic" href="#equipo">Equipo</a></div>
+                <div><a data-easing="easeInOutCubic" href="#contacto">Contacto</a></div>
+            </nav>
+        </div>
+        
+
+        <main class="container">
+
+            <!-- NOSOTROS --> <!-- Aquí sí uso bootstrap  y flexbox -->
+            <section class="row no-gutters" id="nosotros">
+                <div class="col-7 d-flex flex-column">
+                    <h1 class="titulo1">
+                        ¿Quienes somos?
+                    </h1>
+                    <div>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                        Quos fuga dignissimos nostrum voluptatem, dolorem modi iste 
+                        distinctio quidem velit recusandae fugiat consequatur iure impedit 
+                        quibusdam. Est, aspernatur molestiae. Ipsam, veritatis?
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                        Quos fuga dignissimos nostrum voluptatem, dolorem modi iste 
+                        distinctio quidem velit recusandae fugiat consequatur iure impedit 
+                        quibusdam. Est, aspernatur molestiae. Ipsam, veritatis?
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-center align-items-center">
+                    <img src="img/300x80.png" alt="logo">
+                </div>
+            </section>
+
+            <!-- DESARROLLO -->
+            <section class="d-flex flex-column" id="desarrollo">
+                <h1 class="titulo1">¿Cómo se hizo?</h1>
+                
+                <div>
+                    <video width="800" controls>
+                        <source src="media/ditto.mp4">
+                    </video>
+                </div>
+            </section>
+
+            <!-- EQUIPO -->
+            <!--
+                Aquí uso mis propias reglas css, me base un poco en lo que hace bootstrap. Te explico las clases:
+                - myCard-row: solo es una fila donde irán las vistas. Si se necesita otra fila, se agrega otro div con esa clase.
+                - myCard-col: es la caja que contiene cada uno de los layout.
+                - myCard-container: es el layout que contiene la imagen, el nombre de la persona y su puesto.
+                - myCard-header: aquí va la imagen.
+                - myCard-body: aquí va el nombre de la persona.
+                - myCard-footer: aquí va el puesto de la persona.
+
+                Si necesitas modificar el margen entre las filas, modifica "myCard-row".
+                Si necesitas modificar el padding del layout, modifica "myCard-container".
+                Los bordes de colores son solo para visualización, esos se deben quitar.
+                P.d. Sorry, creo que pude haber hecho lo mismo con bootstrap.
+            -->
+            <section class="d-flex flex-column" id="equipo">
+                <h1 class="titulo1">El equipo</h1>
+                <!-- Card Row 1 -->
+                <div class="myCard-row">
+                    <!-- Card Col -->
+                    <div class="myCard-col">
+                        <div class="myCard-container">
+                            <div class="myCard-header"><img src="img/60x60.png" alt="perfil"></div>
+                            <div class="myCard-body">
+                                Jose Geronimo
+                            </div>
+                            <div class="myCard-footer">
+                                Diseñador web
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Col -->
+                    <div class="myCard-col">
+                        <div class="myCard-container">
+                            <div class="myCard-header"><img src="img/60x60.png" alt="perfil"></div>
+                            <div class="myCard-body">
+                                Jose Geronimo
+                            </div>
+                            <div class="myCard-footer">
+                                Diseñador web
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Col -->
+                    <div class="myCard-col">
+                        <div class="myCard-container">
+                            <div class="myCard-header"><img src="img/60x60.png" alt="perfil"></div>
+                            <div class="myCard-body">
+                                Jose Geronimo
+                            </div>
+                            <div class="myCard-footer">
+                                Diseñador web
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Row 2 -->
+                <div class="myCard-row">
+                    <!-- Card Col -->
+                    <div class="myCard-col">
+                        <div class="myCard-container">
+                            <div class="myCard-header"><img src="img/60x60.png" alt="perfil"></div>
+                            <div class="myCard-body">
+                                Jose Geronimo
+                            </div>
+                            <div class="myCard-footer">
+                                Diseñador web
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Col -->
+                    <div class="myCard-col">
+                        <div class="myCard-container">
+                            <div class="myCard-header"><img src="img/60x60.png" alt="perfil"></div>
+                            <div class="myCard-body">
+                                Jose Geronimo
+                            </div>
+                            <div class="myCard-footer">
+                                Diseñador web
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Col -->
+                    <div class="myCard-col">
+                        <div class="myCard-container">
+                            <div class="myCard-header"><img src="img/60x60.png" alt="perfil"></div>
+                            <div class="myCard-body">
+                                Jose Geronimo
+                            </div>
+                            <div class="myCard-footer">
+                                Diseñador web
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACTO -->
+            <section class="" id="contacto">
+                <h1 class="titulo1">Contáctanos</h1>
+            </section>
+        </main>
+    </body>
+    <!-- 
+        Este script lo pide la librería de smooth-scroll, no hay mucho que decir.
+     -->
+    <script type="text/javascript">
+        var scroll = new SmoothScroll('a[href*="#"]:not([data-easing])');
+
+        if (document.querySelector('[data-easing]')) {
+            var easeInOutCubic = new SmoothScroll('[data-easing="easeInOutCubic"]', {easing: 'easeInOutCubic'});
+        }
+    </script>
+</html>

@@ -1,0 +1,11 @@
+/* QUEDÓ OBSOLETO, NO SE USA */
+#inicio{
+    position: absolute;
+}
+
+#inicio nav a{
+    max-width: 130px;
+    min-width: 130px;
+    height: 40px;
+    border: none;
+}

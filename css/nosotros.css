@@ -1,0 +1,5 @@
+#nosotros > div:first-child > div:last-child{
+    /* color: lightgray; */
+    color: var(--nosotros-color);
+    font-size: 16pt;
+}
