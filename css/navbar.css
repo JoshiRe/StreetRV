@@ -1,9 +1,9 @@
 #navbar{
     z-index: 10;
+    top: 0;
     /* background-color: #142850; */
-    background-color: var(--nav-bgColor);
     width: 100%;
-    height: 70px;
+    height: 60px;
     padding-left: 100px;
     padding-right: 100px;
     display: flex;
@@ -15,6 +15,7 @@
 }
 
 #navbar > div{
+
     align-items: center;
     padding-left: 2em;
 }
@@ -25,7 +26,9 @@
 
 #navbar nav div{
     flex: 1;
-    display: flex;
+    margin-top: 3%;
+    display: block;
+    text-align: center;
     justify-content: center;
     align-items: center;
     /* background-color: crimson; */
@@ -33,7 +36,7 @@
 
 #navbar nav div a{
     /* color: #93a6cc; */
-    color: var(--nav-a-color);
+    color: white;
     transition: all .3s ease-in 0s;
 }
 
@@ -55,8 +58,30 @@
     position: fixed;
     top: 0;
     width: 100%;
+    background-color: #2d2d2d;
 }
 
-.sticky > div{
-    width: 100%;
+
+.top-navbar{
+    top: 0;
+    position: absolute;
+    background-color: transparent;
+}
+
+.aux{
+    background-color: var(--nav-a-color2);
+    width: 7em;
+    height: 5px;
+    bottom: 0;
+    position: absolute;
+    display: none;
+}
+.selected{
+    display: block;
+}
+.selecteds{
+    display: block;
+}
+.not-selecteds{
+    display: none;
 }

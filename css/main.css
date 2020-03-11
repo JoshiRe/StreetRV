@@ -5,7 +5,7 @@
 */
 
 :root{
-    --main-bgColor: #27496d;      /* Color de fondo de toda la página */
+    --main-bgColor: #27252a;      /* Color de fondo de toda la página */
     --section-bgColor: #335e8d;   /* Color de fondo de cada sección */
     --titulo1-color: lightgrey;   /* Color del texto de los títulos */
     --nav-bgColor: #142850;      /* Color de fondo del navbar */
@@ -18,6 +18,8 @@
 }
 
 html{
+    margin: 0;
+    padding: 0;
     border: solid black 2px;
     background-color: var(--main-bgColor);
 }
@@ -30,7 +32,10 @@ header{
 }
 
 body{
+    margin: 0;
+    padding: 0;
     /* border: 2px solid chartreuse; */
+    font-family:'Rubik Medium';
     background-color: transparent;
     height: 100%;
 }
@@ -44,7 +49,62 @@ section{
 
 .titulo1{
     color: var(--titulo1-color);
-    font-size: 48pt;
-    font-style: italic;
+    font-size: 24pt;
+    font-family:'Rubik Black';
+    letter-spacing: 2px;
     margin-bottom: 0;
+}
+
+#inicio{
+    position: relative;
+    top:0px;
+    margin-left:0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    }
+.sobre {
+    position:absolute;
+    left: 0px;
+    border:none;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+.back{
+    top:0px;
+    left:0px;
+    border:none;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: background 30s ease-in infinite;
+}
+
+@keyframes background {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.5);}
+  100% {transform: scale(1);}
+}
+
+body::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar
+{
+    width: 5px;
+    height: 5px;
+    background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{   
+    height: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
 }

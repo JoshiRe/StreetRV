@@ -32,18 +32,44 @@ $(function(){
     //     evt.preventDefault();
     //     contactoTop.scrollIntoView();
     // });
+    //Navbar con jquery algo similar pero con valores del scroll 
+    var navbar = $("#navbar");
+    var height = $(window).scrollTop();
+    if(height  < 89) {
+        // do something
+        navbar.removeClass("sticky")
+        navbar.addClass("top-navbar");
+    }  else if( height  > 250 ){
+        navbar.removeClass("top-navbar")
+        navbar.addClass("sticky");
+    }
 
+    $(window).scroll(function() {
+    var height = $(window).scrollTop();
+
+    if(height  > 250) {
+        navbar.removeClass("top-navbar")
+         navbar.addClass("sticky");
+
+    }
+    else if (height <89){
+        navbar.removeClass("sticky");
+        navbar.addClass("top-navbar");
+    }
 });
 
-// Este bloque de código es el que hace que la barra de navegación se pegué al tope de la página
-window.addEventListener("load", function(){
-    var myNavbar = document.getElementById("navbar");
-    var sticky = myNavbar.offsetTop;
-    window.addEventListener("scroll", function(){
-        if(window.pageYOffset >= sticky){
-            myNavbar.classList.add("sticky");
-        }else{
-            myNavbar.classList.remove("sticky");
-        }
+    ///Codigo para ver que submenu esta el usuario
+    $("nav div a").click(function(){
+        $(".aux").removeClass("selecteds")
+        $(this).siblings(".aux").addClass("selecteds");
+        
     });
+
+    $( "nav div a" ).hover(
+  function() {
+    $( this ).siblings(".aux").addClass("selected");
+  }, function() {
+    $( this ).siblings(".aux").removeClass("selected");
+  }
+);
 });

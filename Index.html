@@ -50,18 +50,20 @@
         <link rel="stylesheet" href="css/navbar.css">
         <link rel="stylesheet" href="css/nosotros.css">
         <link rel="stylesheet" href="css/desarrollo.css">
-        <link rel="stylesheet" href="css/equipo.css">
-
+        <link rel="stylesheet" href="css/equipo.css">        
+        <!-- Script de fuente -->
+        <link rel="stylesheet" type="text/css" href="fonts/style.css"/>
         <!-- Scripts propios -->
         <script type="text/javascript" src="js/myNavbar.js"></script>
     </head>
 
     <body id="body">
+        <!-- Aquí irá el título llamativo 
         <header>
-            <!-- Aquí irá el título llamativo -->
-            <!-- Aquí irá el video de presentación -->
-        </header>
+            
         
+        </header>
+        -->
         <!-- NAVBAR -->
         <!-- 
             > Notarás que hay unos atributos extras, estos forman parte de la sintaxis de la librería "smooth-scroll"
@@ -71,39 +73,36 @@
                 <a data-easing="easeInOutCubic" href="#body"><img src="img/150x40.png" alt=""></a>
             </div>
             <nav>
-                <div><a data-easing="easeInOutCubic" href="#body">Inicio</a></div>
-                <div><a data-easing="easeInOutCubic" href="#nosotros">Nosotros</a></div>
-                <div><a data-easing="easeInOutCubic" href="#desarrollo">Desarrollo</a></div>
-                <div><a data-easing="easeInOutCubic" href="#equipo">Equipo</a></div>
-                <div><a data-easing="easeInOutCubic" href="#contacto">Contacto</a></div>
+                <div><a data-easing="easeInOutCubic" href="#inicio" id="inicio-nav">Inicio </a><span class="aux selecteds"></span></div>
+                <div><a data-easing="easeInOutCubic" href="#nosotros" id="nosotros-nav">Nosotros</a><span class="aux"></span></div>
+                <div><a data-easing="easeInOutCubic" href="#desarrollo" id="desarrollo-nav">Desarrollo</a><span class="aux"></span></div>
+                <div><a data-easing="easeInOutCubic" href="#equipo" id="equipo-nav">Equipo</a><span class="aux"></span></div>
+                <div><a data-easing="easeInOutCubic" href="#contacto" id="contacto-nav">Contacto</a><span class="aux"></span></div>
             </nav>
         </div>
-        
 
-        <main class="container">
+        <div id="inicio">
+            <img class="back" src="img/4.jpg"  />
+            <img class="sobre" src="img/3.png" />
+        </div>
 
             <!-- NOSOTROS --> <!-- Aquí sí uso bootstrap  y flexbox -->
-            <section class="row no-gutters" id="nosotros">
-                <div class="col-7 d-flex flex-column">
-                    <h1 class="titulo1">
-                        ¿Quienes somos?
-                    </h1>
-                    <div>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Quos fuga dignissimos nostrum voluptatem, dolorem modi iste 
-                        distinctio quidem velit recusandae fugiat consequatur iure impedit 
-                        quibusdam. Est, aspernatur molestiae. Ipsam, veritatis?
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Quos fuga dignissimos nostrum voluptatem, dolorem modi iste 
-                        distinctio quidem velit recusandae fugiat consequatur iure impedit 
-                        quibusdam. Est, aspernatur molestiae. Ipsam, veritatis?
+        <div class="" id="nosotros">
+               <div class="card">
+                <div class="card-horizontal">
+                    <div class="img-square-wrapper">
+                        <img class="" src="img/team.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h1 class="titulo1">¿QUIENES SOMOS?</h1>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
-                <div class="col d-flex justify-content-center align-items-center">
-                    <img src="img/300x80.png" alt="logo">
-                </div>
-            </section>
+            </div>
+            </div>
 
+
+<main class="container">
             <!-- DESARROLLO -->
             <section class="d-flex flex-column" id="desarrollo">
                 <h1 class="titulo1">¿Cómo se hizo?</h1>
