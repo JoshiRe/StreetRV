@@ -58,7 +58,10 @@
         <script type="text/javascript" src="js/myNavbar.js"></script>
     </head>
 
+
     <body id="body">
+
+
         <!-- Aquí irá el título llamativo 
         <header>
             
@@ -82,6 +85,7 @@
             </nav>
         </div>
 
+
         <div id="inicio">
             <img class="back" src="img/4.jpg"  />
             <img class="sobre" src="img/3.png" />
@@ -103,18 +107,20 @@
         </div>
 
 
-            <main class="container">
+            
             <!-- DESARROLLO -->
-            <section class="d-flex flex-column" id="desarrollo">
-                <h1 class="titulo1">¿Cómo se hizo?</h1>
+            <div class="" id="desarrollo">
+                <h1 class="titulo1">DESARROLLO</h1>
                 
-                <div>
-                    <video width="800" controls>
-                        <source src="media/ditto.mp4">
-                    </video>
-                </div>
-            </section>
+                <img style=" margin-left: 43%;" src="img/special.png">
+                    <a href="#openModal">
+                        <div>
+                            <img src="img/play.jpg">   
+                        </div>
+                    </a>
+            </div>
 
+            <main class="container">
             <!-- EQUIPO -->
             <!--
                 Aquí uso mis propias reglas css, me base un poco en lo que hace bootstrap. Te explico las clases:
@@ -223,12 +229,15 @@
                             <div class="carousel-inner">
                               <div class="carousel-item active">
                                 <h4> Mal game </h4>
+                                <p> Ulises Resendiz </p>
                               </div>
                               <div class="carousel-item">
                                    <h4> Regular game </h4>
+                                   <p> Ulises Resendiz </p>
                               </div>
                               <div class="carousel-item">
                                 <h4> Buen game </h4>
+                                <p> Ulises Resendiz </p>
                               </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -254,8 +263,19 @@
                 </div>
                 
             </div>
-        
+
+        <div id="openModal" class="modalDialog">
+            <div>
+                <a href="#close" title="Close" class="close">X</a>
+                <h2>Mi modal</h2>
+                <p>Este es un ejemplo de modal, creado gracias al poder de CSS3.</p>
+                <p>Puedes hacer un montón de cosas aquí, como alertas o incluso crear un formulario de registro aquí mismo.</p>
+            </div>
+        </div>
+    
     </body>
+
+
     <!-- 
         Este script lo pide la librería de smooth-scroll, no hay mucho que decir.
      -->
