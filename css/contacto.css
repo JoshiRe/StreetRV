@@ -1,0 +1,57 @@
+#contacto{
+	text-align: center;
+	margin-top: 4%;
+	background-color: #17161a;
+	width: 100%;
+	display: inline-block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+.form-contacto{
+	display: block;
+	margin-top: 5%;
+	margin-bottom: 70px;
+}
+
+.feedback-input {
+  	color:white;
+	font-weight:500;
+	font-size: 18px;
+	border-radius: 5px;
+	line-height: 22px;
+	background-color: transparent;
+	border:2px solid var(--nav-a-color2);
+	transition: all 0.3s;
+	padding: 13px;
+	margin-bottom: 15px;
+	width:100%;
+	box-sizing: border-box;
+	outline:0;
+}
+
+.feedback-input:focus { border:2px solid var(--nav-a-color2); }
+
+textarea {
+  	height: 150px;
+  	line-height: 150%;
+  	resize:vertical;
+}
+
+[type="submit"] {
+  width: 100%;
+  background:var(--nav-a-color2);
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background: #be832a; }
+
+.carousel-item h4{
+	color: white;
+}
