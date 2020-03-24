@@ -72,4 +72,32 @@ $(function(){
     $( this ).siblings(".aux").removeClass("selected");
   }
 );
+
+   
+    $("#playvideo").click(function(){
+        $(".modalDialog").addClass("play");
+    
+    });
+
+      $(".close").click(function(){
+        $(".modalDialog").removeClass("play");
+        var media = $("#video").get(0);
+        media.pause();
+        media.currentTime = 0;
+    
+    });
+
+    $( ".myCard-container" ).hover(
+  function() {
+    var aux = $(this).children(".activo");
+    var backCard = $(this).children(".myCard-back");
+    aux.addClass( "hover" );
+    backCard.addClass( "show" );
+  }, function() {
+      var aux = $(this).children(".activo");
+      var backCard = $(this).children(".myCard-back");
+      aux.removeClass( "hover" );
+      backCard.removeClass( "show" );
+  }
+);
 });

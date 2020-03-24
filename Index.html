@@ -78,9 +78,9 @@
             </div>
             <nav>
                 <div><a data-easing="easeInOutCubic" href="#inicio" id="inicio-nav">Inicio </a><span class="aux selecteds"></span></div>
-                <div><a data-easing="easeInOutCubic" href="#nosotros" id="nosotros-nav">Nosotros</a><span class="aux"></span></div>
-                <div><a data-easing="easeInOutCubic" href="#desarrollo" id="desarrollo-nav">Desarrollo</a><span class="aux"></span></div>
-                <div><a data-easing="easeInOutCubic" href="#equipo" id="equipo-nav">Equipo</a><span class="aux"></span></div>
+                <div><a data-easing="easeInOutCubic" href="#quienes-somos" id="nosotros-nav">Nosotros</a><span class="aux"></span></div>
+                <div><a data-easing="easeInOutCubic" href="#desarrollos" id="desarrollo-nav">Desarrollo</a><span class="aux"></span></div>
+                <div><a data-easing="easeInOutCubic" href="#equipos" id="equipo-nav">Equipo</a><span class="aux"></span></div>
                 <div><a data-easing="easeInOutCubic" href="#contacto" id="contacto-nav">Contacto</a><span class="aux"></span></div>
             </nav>
         </div>
@@ -90,7 +90,7 @@
             <img class="back" src="img/4.jpg"  />
             <img class="sobre" src="img/3.png" />
         </div>
-
+<b style="margin-left: -15px;" id="quienes-somos"> </b>
             <!-- NOSOTROS --> <!-- Aquí sí uso bootstrap  y flexbox -->
         <div class="" id="nosotros">
                <div class="card">
@@ -106,21 +106,19 @@
             </div>
         </div>
 
-
+<b style="margin-left: -15px;" id="desarrollos"> </b>
             
             <!-- DESARROLLO -->
             <div class="" id="desarrollo">
-                <h1 class="titulo1">DESARROLLO</h1>
-                
+                <h1 class="titulo1">DESARROLLO</h1>                
                 <img style=" margin-left: 43%;" src="img/special.png">
-                    <a href="#openModal">
-                        <div>
+
+                        <div id="playvideo">
                             <img src="img/play.jpg">   
                         </div>
                     </a>
             </div>
 
-            <main class="container">
             <!-- EQUIPO -->
             <!--
                 Aquí uso mis propias reglas css, me base un poco en lo que hace bootstrap. Te explico las clases:
@@ -136,43 +134,56 @@
                 Los bordes de colores son solo para visualización, esos se deben quitar.
                 P.d. Sorry, creo que pude haber hecho lo mismo con bootstrap.
             -->
-            <section class="d-flex flex-column" id="equipo">
-                <h1 class="titulo1">El equipo</h1>
+        <b style="margin-left: -15px;" id="equipos"> </b>
+
+            <div class="" id="equipo">
+               <h1 class="titulo1">EQUIPO</h1>                
+                <img style=" margin-left: 43%; margin-bottom: 3%;" src="img/special.png">
                 <!-- Card Row 1 -->
                 <div class="myCard-row">
                     <!-- Card Col -->
                     <div class="myCard-col">
                         <div class="myCard-container">
-                            <div class="myCard-header"><img src="img/60x60.png" alt="perfil"></div>
-                            <div class="myCard-body">
-                                Jose Geronimo
+                            <div class="activo myCard-header "><img class="pefil " src="img/60x60.png" alt="perfil"></div>
+                            <div class="myCard-body activo">
+                                Mariana García
                             </div>
-                            <div class="myCard-footer">
-                                Diseñador web
+                            <div class="myCard-footer activo">
+                                Investigación y Difusión
+                            </div>
+                              <div class="myCard-back">
+                                 Es la encargada de dirigir y coordinar las actividades relacionadas con el análisis y desarrollo del proyecto. Realizar los estudios de factibilidad y pertinencia de las líneas de generación y aplicación del proyecto. Gestiona y supervisa los recursos para la difusión del proyecto.                      
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Card Col -->
+                    <div class="myCard-col">
+                        <div class="myCard-container">
+                            <div class="activo myCard-header"><img class="pefil" src="img/60x60.png" alt="perfil"></div>
+                            <div class="myCard-body activo">
+                                Jose Gerónimo
+                            </div>
+                            <div class="myCard-footer activo">
+                                Programador Web
+                            </div>
+                             <div class="myCard-back">
+                                 Es el encargado de diseñar, crear y realizan mantenimiento a la aplicacion web del proyecto.  Habilidad para la resolución de problemas. Alta capacidad de análisis y de concentración.  Conocimientos profundos técnicos de lenguajes de programación complejos.                   
                             </div>
                         </div>
                     </div>
                     <!-- Card Col -->
                     <div class="myCard-col">
                         <div class="myCard-container">
-                            <div class="myCard-header"><img src="img/60x60.png" alt="perfil"></div>
-                            <div class="myCard-body">
-                                Jose Geronimo
+                            <div class="activo myCard-header"><img class="pefil" src="img/60x60.png" alt="perfil"></div>
+                            <div class="myCard-body activo">
+                                Luis Javier López
                             </div>
-                            <div class="myCard-footer">
-                                Diseñador web
+                            <div class="myCard-footer activo">
+                                Programador Háptico
                             </div>
-                        </div>
-                    </div>
-                    <!-- Card Col -->
-                    <div class="myCard-col">
-                        <div class="myCard-container">
-                            <div class="myCard-header"><img src="img/60x60.png" alt="perfil"></div>
-                            <div class="myCard-body">
-                                Jose Geronimo
-                            </div>
-                            <div class="myCard-footer">
-                                Diseñador web
+                            <div class="myCard-back">
+                                 Es el encargado de crear una experiencia convincente para el usuario: encargado de crear las conexiones adecuadas entre el arduino y el motor grafico. Su objetivo es hacer que los sistemas de hapticos funcionen de forma más eficiente. Desarrollar las modificaciones y mejoras.
                             </div>
                         </div>
                     </div>
@@ -182,41 +193,52 @@
                     <!-- Card Col -->
                     <div class="myCard-col">
                         <div class="myCard-container">
-                            <div class="myCard-header"><img src="img/60x60.png" alt="perfil"></div>
-                            <div class="myCard-body">
-                                Jose Geronimo
+                            <div class="activo myCard-header"><img  class="pefil" src="img/60x60.png" alt="perfil"></div>
+                            <div class="activo myCard-body">
+                                Verónica Olmos                                
                             </div>
-                            <div class="myCard-footer">
-                                Diseñador web
+                            <div class="activo myCard-footer">
+                                Modeladora y Animadora
                             </div>
-                        </div>
-                    </div>
-                    <!-- Card Col -->
-                    <div class="myCard-col">
-                        <div class="myCard-container">
-                            <div class="myCard-header"><img src="img/60x60.png" alt="perfil"></div>
-                            <div class="myCard-body">
-                                Jose Geronimo
-                            </div>
-                            <div class="myCard-footer">
-                                Diseñador web
+                               <div class="myCard-back">
+                                 Es la encargada de capturar requerimientos del proyecto en cuestion de modelados y animación 3D. Correcciones a las piezas generadas. Comprensión de los requerimientos del proyecto, generación y argumentación de alternativas de solución. Conocimiento en iluminación, render y animación 3D.
                             </div>
                         </div>
                     </div>
                     <!-- Card Col -->
                     <div class="myCard-col">
                         <div class="myCard-container">
-                            <div class="myCard-header"><img src="img/60x60.png" alt="perfil"></div>
-                            <div class="myCard-body">
-                                Jose Geronimo
+                            <div class="activo myCard-header"><img class="pefil" src="img/60x60.png" alt="perfil"></div>
+                            <div class="activo myCard-body">
+                                Marcelo Rivera
                             </div>
-                            <div class="myCard-footer">
-                                Diseñador web
+                            <div class="activo myCard-footer">
+                                Multimedia y Difusión
+                            </div>
+                             <div class="myCard-back">
+                                 Es el encargado de conceptualizar, diseñar y desarrollar el proyecto de forma estrategica que integran medios digitales y medios tradicionales, para la divulgacion el proyecto en tema de competencia en beneficio de la empresa, y la promoción estrategica de trabajo.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Col -->
+                    <div class="myCard-col">
+                        <div class="myCard-container">
+                            <div class="activo myCard-header"><img class="pefil" src="img/60x60.png" alt="perfil"></div>
+                            <div class="activo myCard-body">
+                                Ulises Resendiz
+                            </div>
+                            <div class="activo myCard-footer">
+                                Programador Motor Gráfico
+                            </div>
+                            <div class="myCard-back">
+                                 Es el encargado de desarrollar, diseñar e implementar codigo para el proyecto en el motor establecido unreal engine 4, sus tareas son ejecutar el programa para descartar cualquier falla o error. Desarrollar las modificaciones y mejoras. Refinar el código de ser necesario.
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+
+            <main class="container">  
         </main>
             <!-- CONTACTO -->
             <div class="" id="contacto">
@@ -266,10 +288,12 @@
 
         <div id="openModal" class="modalDialog">
             <div>
-                <a href="#close" title="Close" class="close">X</a>
-                <h2>Mi modal</h2>
-                <p>Este es un ejemplo de modal, creado gracias al poder de CSS3.</p>
-                <p>Puedes hacer un montón de cosas aquí, como alertas o incluso crear un formulario de registro aquí mismo.</p>
+                <a title="Cerrar" class="close">X</a>
+                <video width="100%" height="100%" controls id="video">
+                <source src="media/ditto.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
             </div>
         </div>
     

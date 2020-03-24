@@ -18,6 +18,7 @@
 	margin-left: 10%;
 	overflow: hidden;
 	transition: transform .5s ease;
+	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 #desarrollo div{
@@ -26,7 +27,7 @@
 	width: 80%;
 }
 #desarrollo div img:hover{
-	  transform: scale(.9);
+	  transform: scale(.95);
 	  cursor: pointer;
 }
 
@@ -36,7 +37,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: rgba(0,0,0,0.8);
+	background: rgba(0,0,0,0.7);
 	z-index: 99999;
 	opacity:0;
 	-webkit-transition: opacity 400ms ease-in;
@@ -45,32 +46,34 @@
 	pointer-events: none;
 
 }
+.play{
+	opacity:1;
+	pointer-events: auto;
+}
 .modalDialog:target {
 	opacity:1;
 	pointer-events: auto;
 }
 .modalDialog > div {
-	width: 400px;
+	width: 1000px;
 	position: relative;
-	margin: 10% auto;
-	padding: 5px 20px 13px 20px;
-	border-radius: 10px;
-	background: #fff;
-	background: -moz-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999);
+	margin: 5% auto;
+	padding: 0;
+	border-radius: 0;
+
     -webkit-transition: opacity 400ms ease-in;
 	-moz-transition: opacity 400ms ease-in;
 	transition: opacity 400ms ease-in;
 }
 .close {
-	background: #606061;
-	color: #FFFFFF;
+	background: #f19f24;
+	color: #ffffff;
 	line-height: 25px;
 	position: absolute;
 	right: -12px;
 	text-align: center;
 	top: -10px;
+	z-index: 100000;
 	width: 24px;
 	text-decoration: none;
 	font-weight: bold;
@@ -81,4 +84,10 @@
 	-webkit-box-shadow: 1px 1px 3px #000;
 	box-shadow: 1px 1px 3px #000;
 }
-.close:hover { background: #00d9ff; }
+.close:hover { background: #8a6315; }
+
+#video{
+	border: 0;
+	outline: 0;
+
+}
