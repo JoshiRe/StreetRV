@@ -53,6 +53,7 @@ section{
     font-family:'Rubik Black';
     letter-spacing: 2px;
     margin-bottom: 0;
+    
 }
 
 #inicio{
@@ -107,4 +108,25 @@ body::-webkit-scrollbar-thumb
     height: 5px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #555;
+}
+
+.tituloinicio{
+    position: absolute;
+    color: white;
+    z-index: 9;
+    margin-top: -22%;
+    font-size: 24pt;
+    margin-left: 40%;
+}
+.tituloimg{
+    margin-left: 7%;
+}
+.tituloinicio p{
+     font-size: 12pt;
+}
+
+.tituloinicio button{
+    width: 60%;
+    font-size: 12pt;
+    margin-left: 20%;
 }

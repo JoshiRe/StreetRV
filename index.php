@@ -28,6 +28,22 @@
     > Cuando presionas un botón del navbar, no se queda de color naranja para indicar que estás en esa sección. Pretendía resolver eso
         con js y css.
  -->
+ <?php
+$usuario = "root";
+$contrasena = "";  // en mi caso tengo contraseña pero en casa caso introducidla aquí.
+$servidor = "localhost";
+$basededatos = "streetRV";
+
+$conexion = mysqli_connect( $servidor, $usuario, "" ) or die ("No se ha podido conectar al servidor de Base de datos");
+
+$db = mysqli_select_db( $conexion, $basededatos ) or die ( "No se ha podido conectar a la base de datos" );
+
+$consultaActivo = "SELECT * FROM contacto order by fecha desc limit 5";
+
+$resultado = mysqli_query( $conexion, $consultaActivo ) or die ( "Algo ha ido mal en la consulta a la base de datos");
+
+
+ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,7 +53,7 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="fontawesome/css/all.min.css">
-
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <!-- Jquery -->
         <script type="text/javascript" src="Jquery/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="Jquery/popper.min.js"></script> 
@@ -90,6 +106,14 @@
             <img class="back" src="img/4.jpg"  />
             <img class="sobre" src="img/3.png" />
         </div>
+        <strong class="tituloinicio"> Street Luge RV <br>
+        <img style="margin-top: 1%;" src="img/special.png" class="tituloimg">
+        <br> <p> Experiencia en Realidad Virtual </p>
+        <a href="#desarrollos"><button> Conoce Más</button></a>
+        </strong>
+
+
+
 <b style="margin-left: -15px;" id="quienes-somos"> </b>
             <!-- NOSOTROS --> <!-- Aquí sí uso bootstrap  y flexbox -->
         <div class="" id="nosotros">
@@ -100,7 +124,19 @@
                     </div>
                     <div class="card-body">
                         <h1 class="titulo1">¿QUIENES SOMOS?</h1>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Para Renew Dev, la satisfacción del cliente es sinónimo de calidad.  Es por eso que la empresa tiene como principal enfoque el poder satisfacer las necesidades del cliente, brindando productos y servicios que cumpla con las expectativas de los mismos. </p>
+                        <p>
+                        Para ello, Renew Dev proporciona apoyo y soporte con su equipo de programadores e ingenieros altamente capacitados, para brindar productos y servicios de excelente calidad. Renew Dev, somos una empresa de software líder, que cuenta con empleados capacitados que sabrán como resolver sus problemas de aplicación en tecnologías de una manera segura, confiable, eficiente y agradable. 
+                    </p> <p> En la época actual, el mercado demanda una atención inmediata, una interfaz sencilla y una experiencia grata por eso, con nuestro conocimiento y experiencia, junto a nuestras avanzadas e innovadoras herramientas de soporte y asistencia, nos permiten ofrecer un servicio tecnológico integral que responde totalmente a las necesidades productivas de tu empresa.</p>
+                    <p> ¿Porqué elegirnos?
+                    •   Contamos con asesoramiento en última tecnología para logística directa e inversa.
+                    •   Desarrollamos software multidispositivo y multiplataforma.
+                    •   Te aseguramos una seguridad informática y protección de datos.
+                    •   Tenemos estrategias y gestión de máximo nivel para tu empresa.
+                    •   Nuestro equipo profesional tiene amplio conocimiento en los nuevos avances tecnológicos.
+                    •   Generaremos una reducción de costos.
+
+                        </p>
                     </div>
                 </div>
             </div>
@@ -134,9 +170,9 @@
                 Los bordes de colores son solo para visualización, esos se deben quitar.
                 P.d. Sorry, creo que pude haber hecho lo mismo con bootstrap.
             -->
-        <b style="margin-left: -15px;" id="equipos"> </b>
+        <b style="margin-top: -35px; position: absolute;" id="equipos"> </b>
 
-            <div class="" id="equipo">
+            <div class="" id="equipo" style="margin-top: 35px;">
                <h1 class="titulo1">EQUIPO</h1>                
                 <img style=" margin-left: 43%; margin-bottom: 3%;" src="img/special.png">
                 <!-- Card Row 1 -->
@@ -249,21 +285,16 @@
                     <div style="right: 8%; width: 48%; position: absolute; margin-top: 7%;">
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
                             <div class="carousel-inner">
-                              <div class="carousel-item active">
-                                <h4> Mal game </h4>
-                                <p> Ulises Resendiz </p>
-                                <label class="fecha"> 12 de Marzo del 2020 </label>
-                              </div>
-                              <div class="carousel-item">
-                                   <h4> Regular game </h4>
-                                   <p> Ulises Resendiz </p>
-                                   <label class="fecha"> 12 de Marzo del 2020 </label>
-                              </div>
-                              <div class="carousel-item">
-                                <h4> Buen game </h4>
-                                <p> Ulises Resendiz </p>
-                                <label class="fecha"> 12 de Marzo del 2020 </label>
-                              </div>
+                              <?php
+                                while ($columna = mysqli_fetch_array( $resultado ))
+                                {
+                                $date = date_create($columna[4]);
+                                echo "<div class='carousel-item'>";
+                                 echo "<h4>" . $columna['comentario'] . "</h4><p>" . $columna['nombre'] . "</p><p style='color: #797979'class='fecha'>". date_format($date, 'g:i A d/m/Y') . "</p>";
+                                 echo "</tr>  </div>";
+                                }
+                                ?>  
+                                                  
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -277,12 +308,12 @@
                     </div>   
                       <div style="margin-left: 12%; width: 30%; "> 
                         <div class="form-contacto"> 
-                               <form>      
-                                    <input name="name" type="text" class="feedback-input" placeholder="Nombre" autocomplete="off" />   
-                                    <input name="email" type="text" class="feedback-input" placeholder="Email" autocomplete="off" />
-                                    <textarea name="text" class="feedback-input" placeholder="Comentario"></textarea>
-                                    <input type="submit" value="ENVIAR"/>
-                                </form>
+                                     
+                                    <input id="nombre" name="name" type="text" class="feedback-input" placeholder="Nombre" autocomplete="off" />   
+                                    <input id="email" name="email" type="text" class="feedback-input" placeholder="Email" autocomplete="off" />
+                                    <textarea id="comentario" name="text" class="feedback-input" placeholder="Comentario"></textarea>
+                                    <button id="enviar"> ENVIAR</button>
+                             
                             </div>
                         </div> 
                 </div>
@@ -294,7 +325,7 @@
                 <a title="Cerrar" class="close">X</a>
                 <video width="100%" height="100%" controls id="video">
                 <source src="media/ditto.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                Tu navegador no soporta el formato mp4.
             </video>
 
             </div>
